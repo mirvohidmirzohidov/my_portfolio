@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body navbar-animate" data-bs-theme="dark">
+        <div class="container">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand me-5" href="#">Mirvohid</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex ms-auto" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="img/carousel1.jpg" class="img-fluid rounded-circle mb-4 content-animate" alt="Your Image">
+            </div>
+            <div class="col-md-8 information_wrapper">
+                <h1 class="mb-3 content-animate">About me</h1>
+                <p class="lead content-animate">
+                    Men Mirvohid Mirzohidov, 2007-yil 12-sentyabrda Toshkent viloyati Parkent tumanida tug‘ilganman.
+                    Hozirda 11-sinfda tahsil olaman va IT sohasida o'z mahoratimni oshirish maqsadida frontend
+                    dasturlashni o'rganyapman. 
+                </p>
+                <span class="content-animate">Texnologiyalar bo'yicha tajribam quyidagilardan iborat:</span>
+                <ul class="technologies_list content-animate">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Bootstrap va jQuery kabi frontend kutubxonalari</li>
+                    <li>Sass: zamonaviy CSS preprotsessori</li>
+                    <li>React: Kuchli va keng qamrovli JavaScript kutubxonasi</li>
+                </ul>
+                <p class="lead content-animate">Frontend sohasida o'z qobiliyatlarimni yanada rivojlantirish uchun muntazam ravishda yangi
+                    texnologiyalar va loyihalar ustida ishlayapman. Kelajakda bilimlarimni yanada rivojlantirib,
+                    zamonaviy dasturlash texnologiyalari bo'yicha mutaxassis bo'lishni maqsad qilganman.
+                </p>
+                <a href="About_me.pdf" class="btn btn-outline-primary btn-lg btn-custom content-animate" target="_blank">Download
+                    Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelector('.navbar-animate').classList.add('active');
+            document.querySelectorAll('.content-animate').forEach(el => el.classList.add('active'));
+        });
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                const href = this.getAttribute('href');
+                if (!href.includes('#')) {
+                    event.preventDefault();
+
+                    document.querySelector('.navbar-animate').classList.add('navbar-exit');
+
+                    document.body.classList.add('fade-out');
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
